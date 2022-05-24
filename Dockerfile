@@ -5,10 +5,7 @@ RUN apk --no-cache upgrade && \
                        py3-pip \
                        python3-dev
 
-COPY scripts/requirements.txt /requirements.txt
 COPY scripts/update_farm_host.py /update_farm_host.py
-
-RUN pip3 install -r /requirements.txt
 
 ENTRYPOINT [ \
         "/bin/sh", "-c", \
