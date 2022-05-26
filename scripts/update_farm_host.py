@@ -24,7 +24,7 @@ def main():
     headers = {"Content-Type": "application/json; charset=utf-8"}
     host_params = {
         "ip": ip,
-        "description": f"Host Owner: {username}",
+        "description": f"SMB Service User: {username}",
     }
 
     url = f"{farm_api_url}/hosts/{hostname}/update"
