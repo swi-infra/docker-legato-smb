@@ -7,7 +7,9 @@ RUN apk --no-cache upgrade && \
 
 COPY scripts/update_farm_host.py /update_farm_host.py
 
+ENV ARGS=""
+
 ENTRYPOINT [ \
         "/bin/sh", "-c", \
-        "python3 /update_farm_host.py && /sbin/tini -- /usr/bin/samba.sh" \
+        "python3 /update_farm_host.py && /sbin/tini -- /usr/bin/samba.sh ${ARGS}" \
 ]
